@@ -102,7 +102,6 @@ public class Rekomendasi {
 
             printGameByTags(data, tags, 20);
             printGameByMostPlayer(data);
-            System.out.println();
 
             addGames(data);
 
@@ -134,7 +133,6 @@ public class Rekomendasi {
 
                 case "2":
                     recomendedGames(data);
-                    printGameByMostPlayer(data);
                     break;
 
                 case "3":
@@ -167,14 +165,28 @@ public class Rekomendasi {
             System.out.println(count + ". " + tag.getKey());
             count++;
         }
-        System.out.print("Enter Your Choice : ");
+
+        System.out.print("Enter Your Choice (separate numbers with spaces): ");
         choice = sc.nextLine();
         System.out.println();
-        String[] splitted = choice.split("[ ,.]+");
+
+        String[] choiceNumbers = choice.split("[ ,.]+");
+
         Set<String> tagSet = new HashSet<>();
-        for (String string : splitted) {
-                tagSet.add(string);
+        for (String number : choiceNumbers) {
+            try {
+                int index = Integer.parseInt(number) - 1;
+                if (index >= 0 && index < data.tags.size()) {
+                    String selectedTag = (String) data.tags.keySet().toArray()[index];
+                    tagSet.add(selectedTag);
+                } else {
+                    System.out.println("Invalid choice: " + number);
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input: " + number);
+            }
         }
+
         for (String string : tagSet) {
                 data.userTags.put(string, data.userTags.getOrDefault(string, 0) + 1);
         }
@@ -216,7 +228,7 @@ public class Rekomendasi {
             }
         }
         System.out.println();
-
+        printGameByMostPlayer(data);
         addGames(data);
     }
 
@@ -301,6 +313,7 @@ public class Rekomendasi {
 
         System.out.println("Popuar Among Users:");
         popularGames(data, top3Games, 3);
+        System.out.println();
     }
 
     private static void popularGames(Database data, String[] title, int limit) {
