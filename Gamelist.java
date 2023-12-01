@@ -1,6 +1,5 @@
 package KB.ProjectAKhirKB;
 
-import java.util.Arrays;
 
 public class Gamelist {
     public String title;
