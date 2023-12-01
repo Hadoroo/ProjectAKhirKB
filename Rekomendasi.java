@@ -113,7 +113,7 @@ public class Rekomendasi {
             System.out.println("3. Search By Tags");
             System.out.println("4. Browse All Games");
             System.out.println("exit");
-            System.out.print("Enter your choices : ");
+            System.out.print("Enter your choice : ");
             choice = sc.nextLine();
             System.out.println();
 
