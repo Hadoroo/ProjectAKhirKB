@@ -2,7 +2,10 @@ package KB.ProjectAKhirKB;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class Database {
     ArrayList<Gamelist> list = new ArrayList<>();
@@ -19,22 +22,43 @@ public class Database {
     ArrayList<Gamelist> user9 = new ArrayList<>();
     ArrayList<Gamelist> user10 = new ArrayList<>();
 
+    HashMap<String, Integer> userTags = new HashMap<>();
+    Map<String, Integer> tags = new TreeMap<>(String.CASE_INSENSITIVE_ORDER);
+
     List<ArrayList<Gamelist>> userList = Arrays.asList(
     user, user1, user2, user3, user4, user5, user6, user7, user8, user9, user10
     );
 
 
     public Database(){
+        list.add(new Gamelist("13 Sentinels: Aegis Rim", new String[]{"Adventure", "Visual Novel", "Sci-Fi"}));
+        list.add(new Gamelist("7 Days to Die", new String[]{"Survival", "Open World", "Zombies"}));
+        list.add(new Gamelist("80 Days", new String[]{"Interactive Fiction", "Indie", "Steampunk"}));
+        list.add(new Gamelist("911 Operator", new String[]{"Simulation", "Strategy", "Management"}));
         list.add(new Gamelist("A Hat in Time", new String[]{"Platformer", "Indie", "Cute"}));
         list.add(new Gamelist("A Plague Tale: Innocence", new String[]{"Action/Adventure", "Story-Driven", "Stealth"}));
         list.add(new Gamelist("A Short Hike", new String[]{"Adventure", "Indie", "Relaxing"}));
+        list.add(new Gamelist("A Total War Saga: TROY", new String[]{"Strategy", "Historical", "RTS"}));
         list.add(new Gamelist("A Way Out", new String[]{"Action/Adventure", "Co-op", "Story-Driven"}));
+        list.add(new Gamelist("Abzu", new String[]{"Adventure", "Exploration", "Underwater"}));
+        list.add(new Gamelist("Ace Combat 7: Skies Unknown", new String[]{"Flight", "Action", "Combat"}));
+        list.add(new Gamelist("Aion", new String[]{"MMORPG", "Fantasy", "Multiplayer"}));
+        list.add(new Gamelist("Airships: Conquer the Skies", new String[]{"Indie", "Strategy", "Steampunk"}));
         list.add(new Gamelist("Alan Wake", new String[]{"Action/Adventure", "Horror", "Story-Driven"}));
         list.add(new Gamelist("Alien: Isolation", new String[]{"Horror", "Survival", "Atmospheric"}));
+        list.add(new Gamelist("Alien Swarm: Reactive Drop", new String[]{"Top-Down Shooter", "Co-op", "Sci-Fi"}));
+        list.add(new Gamelist("Aliens: Colonial Marines", new String[]{"FPS", "Horror", "Sci-Fi"}));
+        list.add(new Gamelist("American Truck Simulator", new String[]{"Simulation", "Driving", "Open World"}));
+        list.add(new Gamelist("Amnesia: Rebirth", new String[]{"Horror", "Survival", "Atmospheric"}));
         list.add(new Gamelist("Amnesia: The Dark Descent", new String[]{"Horror", "Survival", "Atmospheric"}));
+        list.add(new Gamelist("Ancestors: The Humankind Odyssey", new String[]{"Action/Adventure", "Survival", "Open World"}));
+        list.add(new Gamelist("Angels with Scaly Wings", new String[]{"Visual Novel", "Dragons", "Dating Sim"}));
         list.add(new Gamelist("Animal Crossing: New Horizons", new String[]{"Life Simulation", "Social Simulation", "Relaxing"}));
-        list.add(new Gamelist("Apex Legends", new String[]{"FPS", "Battle Royale", "Team-Based"}));
+         list.add(new Gamelist("Apex Legends", new String[]{"FPS", "Battle Royale", "Team-Based"}));
+        list.add(new Gamelist("Arcanum: Of Steamworks and Magick Obscura", new String[]{"RPG", "Steampunk", "Isometric"}));
         list.add(new Gamelist("ARK: Survival Evolved", new String[]{"Open World", "Survival", "Crafting"}));
+        list.add(new Gamelist("Arma 3", new String[]{"FPS", "Military", "Simulation"}));
+        list.add(new Gamelist("Art of Rally", new String[]{"Racing", "Indie", "Simulation"}));
         list.add(new Gamelist("Astroneer", new String[]{"Survival", "Space", "Sandbox"}));
         list.add(new Gamelist("Assassin's Creed: Odyssey", new String[]{"Action/Adventure", "Open World", "Historical"}));
         list.add(new Gamelist("Assassin's Creed Valhalla", new String[]{"Action/Adventure", "Open World", "Historical"}));
@@ -255,27 +279,6 @@ public class Database {
         list.add(new Gamelist("Zero Escape: Zero Time Dilemma", new String[]{"Visual Novel", "Puzzle", "Mystery"}));
         list.add(new Gamelist("Zombie Army 4: Dead War", new String[]{"Third-Person Shooter", "Co-op", "Zombies"}));
         list.add(new Gamelist("Zoo Tycoon: Ultimate Animal Collection", new String[]{"Simulation", "Building", "Animals"}));
-        list.add(new Gamelist("13 Sentinels: Aegis Rim", new String[]{"Adventure", "Visual Novel", "Sci-Fi"}));
-        list.add(new Gamelist("7 Days to Die", new String[]{"Survival", "Open World", "Zombies"}));
-        list.add(new Gamelist("80 Days", new String[]{"Interactive Fiction", "Indie", "Steampunk"}));
-        list.add(new Gamelist("911 Operator", new String[]{"Simulation", "Strategy", "Management"}));
-        list.add(new Gamelist("A Short Hike", new String[]{"Adventure", "Indie", "Relaxing"}));
-        list.add(new Gamelist("A Total War Saga: TROY", new String[]{"Strategy", "Historical", "RTS"}));
-        list.add(new Gamelist("Abzu", new String[]{"Adventure", "Exploration", "Underwater"}));
-        list.add(new Gamelist("Ace Combat 7: Skies Unknown", new String[]{"Flight", "Action", "Combat"}));
-        list.add(new Gamelist("Aion", new String[]{"MMORPG", "Fantasy", "Multiplayer"}));
-        list.add(new Gamelist("Airships: Conquer the Skies", new String[]{"Indie", "Strategy", "Steampunk"}));
-        list.add(new Gamelist("Alien Swarm: Reactive Drop", new String[]{"Top-Down Shooter", "Co-op", "Sci-Fi"}));
-        list.add(new Gamelist("Aliens: Colonial Marines", new String[]{"FPS", "Horror", "Sci-Fi"}));
-        list.add(new Gamelist("American Truck Simulator", new String[]{"Simulation", "Driving", "Open World"}));
-        list.add(new Gamelist("Amnesia: Rebirth", new String[]{"Horror", "Survival", "Atmospheric"}));
-        list.add(new Gamelist("Ancestors: The Humankind Odyssey", new String[]{"Action/Adventure", "Survival", "Open World"}));
-        list.add(new Gamelist("Angels with Scaly Wings", new String[]{"Visual Novel", "Dragons", "Dating Sim"}));
-        list.add(new Gamelist("Apex Legends", new String[]{"FPS", "Battle Royale", "Team-Based"}));
-        list.add(new Gamelist("Arcanum: Of Steamworks and Magick Obscura", new String[]{"RPG", "Steampunk", "Isometric"}));
-        list.add(new Gamelist("Arma 3", new String[]{"FPS", "Military", "Simulation"}));
-        list.add(new Gamelist("Art of Rally", new String[]{"Racing", "Indie", "Simulation"}));
-
 
 
         // User 1
@@ -484,6 +487,10 @@ public class Database {
         user10.add(new Gamelist("The Forest", new String[]{"Survival", "Horror", "Open World"}));
         user10.add(new Gamelist("Factorio", new String[]{"Simulation", "Strategy", "Automation"}));
 
-
+        for (Gamelist game : list) {
+            for (String tag : game.tags) {
+                tags.put(tag, tags.getOrDefault(tag, 0) + 1);
+            }
+        }
     }
 }

@@ -13,6 +13,6 @@ public class Gamelist {
 
     @Override
     public String toString() {
-        return "Title: " + title + "\nTags: " + Arrays.toString(tags) + "\n";
+        return title + " (" + String.join(", ", tags) + ")";
     }
 }
