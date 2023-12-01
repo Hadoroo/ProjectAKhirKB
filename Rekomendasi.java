@@ -161,7 +161,23 @@ public class Rekomendasi {
         }
         System.out.println();
         printGameByMostPlayer(data);
-        addGames(data);
+        System.out.println("1. Add Games\n2. Back"); 
+        boolean loop = true;  
+        while (loop) {
+            System.out.print("Enter Your Choice : ");
+            choice = sc.nextLine();
+            System.out.println();
+            switch (choice) {
+                case "1", "Add", "Add Games", "Games":
+                    addGames(data);
+                    loop = false;
+                    break;
+            
+                case "2", "Back":
+                    loop = false;
+                    break;
+            }
+        }
     }
 
     private static void printAllTags(Database data){
@@ -171,7 +187,7 @@ public class Rekomendasi {
             count++;
         }
 
-        System.out.print("Enter Your Choice (separate numbers with spaces): ");
+        System.out.print("Enter Your Choice : ");
         choice = sc.nextLine();
         System.out.println();
 
@@ -198,7 +214,23 @@ public class Rekomendasi {
         String[] tags = tagSet.toArray(new String[0]);
         printGameByTags(data, tags);
         printGameByMostPlayer(data);
-        addGames(data);
+        System.out.println("1. Add Games\n2. Back"); 
+        boolean loop = true;  
+        while (loop) {
+            System.out.print("Enter Your Choice : ");
+            choice = sc.nextLine();
+            System.out.println();
+            switch (choice) {
+                case "1", "Add", "Add Games", "Games":
+                    addGames(data);
+                    loop = false;
+                    break;
+            
+                case "2", "Back":
+                    loop = false;
+                    break;
+            }
+        }
     }
 
     private static void recomendedGames(Database data){
@@ -235,7 +267,23 @@ public class Rekomendasi {
         }
         System.out.println();
         printGameByMostPlayer(data);
-        addGames(data);
+        System.out.println("1. Add Games\n2. Back"); 
+        boolean loop = true;  
+        while (loop) {
+            System.out.print("Enter Your Choice : ");
+            choice = sc.nextLine();
+            System.out.println();
+            switch (choice) {
+                case "1", "Add", "Add Games", "Games":
+                    addGames(data);
+                    loop = false;
+                    break;
+            
+                case "2", "Back":
+                    loop = false;
+                    break;
+            }
+        }
     }
 
     private static void addGames(Database data){
