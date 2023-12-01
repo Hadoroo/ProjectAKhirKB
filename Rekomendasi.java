@@ -22,13 +22,12 @@ public class Rekomendasi {
         System.out.println("9. Co-op");
         System.out.println("10. Platformer");
 
-        System.out.print("Enter your choices (separated by spaces): ");
+        System.out.print("Enter your choices : ");
 
         String choice = sc.nextLine();
 
         String[] splitted = choice.split(" ");
 
-        // Specify the tags you want to filter
         String[] tags = new String[splitted.length];
 
         for (int i = 0; i < splitted.length; i++) {
@@ -76,8 +75,8 @@ public class Rekomendasi {
         }
 
         System.out.println(Arrays.toString(tags));
+        System.out.println();
 
-        // Print games with the specified tags
         printGameByTags(data, tags);
     }
 
