@@ -7,6 +7,7 @@ import java.util.List;
 public class Database {
     ArrayList<Gamelist> list = new ArrayList<>();
 
+    ArrayList<Gamelist> user = new ArrayList<>();
     ArrayList<Gamelist> user1 = new ArrayList<>();
     ArrayList<Gamelist> user2 = new ArrayList<>();
     ArrayList<Gamelist> user3 = new ArrayList<>();
@@ -19,7 +20,7 @@ public class Database {
     ArrayList<Gamelist> user10 = new ArrayList<>();
 
     List<ArrayList<Gamelist>> userList = Arrays.asList(
-    user1, user2, user3, user4, user5, user6, user7, user8, user9, user10
+    user, user1, user2, user3, user4, user5, user6, user7, user8, user9, user10
     );
 
 

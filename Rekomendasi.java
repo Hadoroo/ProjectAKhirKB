@@ -18,78 +18,87 @@ public class Rekomendasi {
 
         Database data = new Database();
 
-        System.out.println("Select your desired game tags:");
-        System.out.println("1. Action/Adventure");
-        System.out.println("2. Open World");
-        System.out.println("3. Indie");
-        System.out.println("4. Story Driven");
-        System.out.println("5. FPS");
-        System.out.println("6. Survival");
-        System.out.println("7. RPG");
-        System.out.println("8. Horror");
-        System.out.println("9. Co-op");
-        System.out.println("10. Platformer");
+        while (true) {
+            System.out.println("Select your desired game tags:");
+            System.out.println("1. Action/Adventure");
+            System.out.println("2. Open World");
+            System.out.println("3. Indie");
+            System.out.println("4. Story Driven");
+            System.out.println("5. FPS");
+            System.out.println("6. Survival");
+            System.out.println("7. RPG");
+            System.out.println("8. Horror");
+            System.out.println("9. Co-op");
+            System.out.println("10. Platformer");
 
-        System.out.print("Enter your choices : ");
+            System.out.print("Enter your choices : ");
 
-        String choice = sc.nextLine();
+            String choice = sc.nextLine();
 
-        String[] splitted = choice.split("[ ,.]+");
+            String[] splitted = choice.split("[ ,.]+");
 
-        Set<String> tagSet = new HashSet<>();
+            Set<String> tagSet = new HashSet<>();
 
-        for (String s : splitted) {
-            switch (s) {
-                case "1":
-                    tagSet.add("Action/Adventure");
-                    break;
+            for (String s : splitted) {
+                switch (s) {
+                    case "1":
+                        tagSet.add("Action/Adventure");
+                        break;
 
-                case "2":
-                    tagSet.add("Open World");
-                    break;
+                    case "2":
+                        tagSet.add("Open World");
+                        break;
 
-                case "3":
-                    tagSet.add("Indie");
-                    break;
+                    case "3":
+                        tagSet.add("Indie");
+                        break;
 
-                case "4":
-                    tagSet.add("Story Driven");
-                    break;
+                    case "4":
+                        tagSet.add("Story Driven");
+                        break;
 
-                case "5":
-                    tagSet.add("FPS");
-                    break;
+                    case "5":
+                        tagSet.add("FPS");
+                        break;
 
-                case "6":
-                    tagSet.add("Survival");
-                    break;
+                    case "6":
+                        tagSet.add("Survival");
+                        break;
 
-                case "7":
-                    tagSet.add("RPG");
-                    break;
+                    case "7":
+                        tagSet.add("RPG");
+                        break;
 
-                case "8":
-                    tagSet.add("Horror");
-                    break;
+                    case "8":
+                        tagSet.add("Horror");
+                        break;
 
-                case "9":
-                    tagSet.add("Co-op");
-                    break;
+                    case "9":
+                        tagSet.add("Co-op");
+                        break;
 
-                case "10":
-                    tagSet.add("Platformer");
-                    break;
+                    case "10":
+                        tagSet.add("Platformer");
+                        break;
+                    
+                    case "exit":
+                        System.exit(0);
+                    
+                    default:
+                        tagSet.add(s);
+                }
             }
+
+            String[] tags = tagSet.toArray(new String[0]);
+
+            System.out.println(Arrays.toString(tags));
+            System.out.println();
+
+            printGameByTags(data, tags, 10);
+
+            printGameByMostPlayer(data);
         }
-
-        String[] tags = tagSet.toArray(new String[0]);
-
-        System.out.println(Arrays.toString(tags));
-        System.out.println();
-
-        printGameByTags(data, tags, 10);
-
-        printGameByMostPlayer(data);
+        
     }
 
     private static void printGameByTags(Database data, String[] tags, int limit) {
@@ -174,4 +183,3 @@ public class Rekomendasi {
         return false;
     }
 }
-
