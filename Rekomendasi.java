@@ -34,7 +34,7 @@ public class Rekomendasi {
 
         String choice = sc.nextLine();
 
-        String[] splitted = choice.split(" ");
+        String[] splitted = choice.split("[ ,.]+");
 
         Set<String> tagSet = new HashSet<>();
 
