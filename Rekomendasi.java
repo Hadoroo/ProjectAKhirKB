@@ -102,7 +102,6 @@ public class Rekomendasi {
 
             printGameByTags(data, tags, 20);
             printGameByMostPlayer(data);
-
             addGames(data);
 
             
@@ -120,15 +119,7 @@ public class Rekomendasi {
 
             switch (choice) {
                 case "1":
-                    System.out.println("Library");
-                    int count = 1;
-                    for (Gamelist game : data.user) {
-                        if (containstags(game, tags)) {
-                            System.out.println(count + ". " + game);
-                            count++;
-                        }
-                    }
-                    System.out.println();
+                    library(data);
                     break;
 
                 case "2":
@@ -137,16 +128,10 @@ public class Rekomendasi {
 
                 case "3":
                     printAllTags(data);
-                    addGames(data);
                     break;
 
                 case "4":
-                    System.out.println("Game List");
-                    for (Gamelist game : data.list) {
-                        System.out.println(game.toString());
-                    }
-                    printGameByMostPlayer(data);
-                    addGames(data);
+                    browseAllGames(data);
                     break;
 
                 case "exit":
@@ -157,6 +142,26 @@ public class Rekomendasi {
             }
         }
         
+    }
+
+    private static void library(Database data){
+        System.out.println("Library");
+        int count = 1;
+        for (Gamelist game : data.user) {
+                System.out.println(count + ". " + game.title + " (" + String.join(", ", game.tags) + ")");
+                count++;
+        }
+        System.out.println();
+    }
+
+    private static void browseAllGames(Database data){
+        System.out.println("Game List");
+        for (Gamelist game : data.list) {
+            System.out.println(game.toString());
+        }
+        System.out.println();
+        printGameByMostPlayer(data);
+        addGames(data);
     }
 
     private static void printAllTags(Database data){
@@ -193,6 +198,7 @@ public class Rekomendasi {
         String[] tags = tagSet.toArray(new String[0]);
         printGameByTags(data, tags);
         printGameByMostPlayer(data);
+        addGames(data);
     }
 
     private static void recomendedGames(Database data){
@@ -233,7 +239,7 @@ public class Rekomendasi {
     }
 
     private static void addGames(Database data){
-        System.out.print("Select A Game To Add To Your Library: ");
+        System.out.print("Select A Game To Add Into Your Library: ");
             choice = sc.nextLine();
             String[]gameTag = {};
             for (Gamelist game : data.list) {
@@ -244,7 +250,7 @@ public class Rekomendasi {
                 }    
             }
 
-            System.out.print(choice + " Successfully Added To Your Library");
+            System.out.print(choice + " Successfully Added Into Your Library");
             System.out.println();
 
             data.user.add(new Gamelist(choice, gameTag));
@@ -267,7 +273,7 @@ public class Rekomendasi {
                 count++;
     
                 if (count == limit) {
-                    break;  // Stop printing after reaching the limit
+                    break; 
                 }
             }
         }
@@ -326,7 +332,7 @@ public class Rekomendasi {
                 count++;
     
                 if (count == limit) {
-                    break;  // Stop printing after reaching the limit
+                    break; 
                 }
             }
         }
