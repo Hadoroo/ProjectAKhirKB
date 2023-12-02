@@ -249,12 +249,14 @@ public class Rekomendasi {
             List<String> tags = entry.getValue();
 
             for (String tag : tags) {
-                topTag[count] = tag;
-                count++;
-
                 if (count == 3) {
                     break;
                 }
+
+                topTag[count] = tag;
+                count++;
+
+                
             }
         }
         
