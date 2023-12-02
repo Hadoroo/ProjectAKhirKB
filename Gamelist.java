@@ -1,4 +1,4 @@
-package KB.ProjectAKhirKB;
+
 
 
 public class Gamelist {
