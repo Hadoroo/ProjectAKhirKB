@@ -111,7 +111,8 @@ public class Rekomendasi {
             System.out.println("1. Your Library");
             System.out.println("2. Recomended Games");
             System.out.println("3. Search By Tags");
-            System.out.println("4. Browse All Games");
+            System.out.println("4. Search By Title");
+            System.out.println("5. Browse All Games");
             System.out.println("exit");
             System.out.print("Enter your choice : ");
             choice = sc.nextLine();
@@ -131,6 +132,10 @@ public class Rekomendasi {
                     break;
 
                 case "4":
+                    browseByTitle(data);
+                    break;
+
+                case "5":
                     browseAllGames(data);
                     break;
 
@@ -142,6 +147,35 @@ public class Rekomendasi {
             }
         }
         
+    }
+
+    private static void browseByTitle(Database data){
+        choice = sc.nextLine();
+        int count = 1;
+        for (Gamelist game : data.list) {
+            if (game.title.contains(choice)) {
+                System.out.println(count + ". " + game.title + " (" + String.join(", ", game.tags) + ")");
+                count++; 
+            }
+        }
+        System.out.println();
+        System.out.println("1. Add Games\n2. Back"); 
+        boolean loop = true;  
+        while (loop) {
+            System.out.print("Enter Your Choice : ");
+            choice = sc.nextLine();
+            System.out.println();
+            switch (choice) {
+                case "1", "Add", "Add Games", "Games":
+                    addGames(data);
+                    loop = false;
+                    break;
+            
+                case "2", "Back":
+                    loop = false;
+                    break;
+            }
+        }
     }
 
     private static void library(Database data){
